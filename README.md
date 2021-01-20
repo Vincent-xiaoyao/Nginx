@@ -14,6 +14,6 @@
 <hr>
 <p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </p>
 <pre class="perttyprint">
-  <span class="com">#下载</span>
+  <span class="com">下载</span>
 
 </pre>
