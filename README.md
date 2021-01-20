@@ -70,7 +70,7 @@ server {
    #告诉浏览器不要猜测mime类型
    add_header X-Content-Type-Options nosniff;
 
-   #证书路径
+    #证书路径
    ssl_certificate /etc/letsencrypt/live/4spaces.org/fullchain.pem;
    #私钥路径
    ssl_certificate_key /etc/letsencrypt/live/4spaces.org/privkey.pem;
