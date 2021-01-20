@@ -114,5 +114,9 @@ server {
 <h4>方式2</h4>
 如果要指定更新某个域名的证书, 则要使用 certonly 参数, 其实和新申请证书时的命令差不多.
 <pre>
-./certbot-auto certonly --webroot --renew-by-default --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org<br>
+./certbot-auto certonly --webroot --renew-by-default --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org
 </pre>
+<h4>方式23</h4>
+上面两种方式，都是手动去执行的，我们可以将上面两种方式跟linux的定时任务进行结合，最终脚本如下：
+
+1）通过端口验证的脚本
