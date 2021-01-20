@@ -118,5 +118,17 @@ server {
 </pre>
 <h4>方式23</h4>
 上面两种方式，都是手动去执行的，我们可以将上面两种方式跟linux的定时任务进行结合，最终脚本如下：
-
+<br>
 1）通过端口验证的脚本
+<pre>
+#!/bin/sh
+#停止 nginx 服务,使用 --standalone 独立服务器验证需要停止当前 web server.
+systemctl stop nginx
+if ! /path/to/certbot-auto renew -nvv --standalone > /var/log/letsencrypt/renew.log 2>&1 ; then
+    echo Automated renewal failed:
+    cat /var/log/letsencrypt/renew.log
+    exit 1
+fi
+#启动 nginx
+systemctl start nginx
+</pre>
