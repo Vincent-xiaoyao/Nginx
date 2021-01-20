@@ -8,8 +8,7 @@
     <li>mariadb-10.1.13</li>
   </ul>
 <p>用证书的主要过程包括：客户端安装、获取证书、配置Nginx、证书自动续期等几个方面。</p>
-<h3>客户端下载</h3>
-<hr>
+# 客户端下载
 <p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </a></p>
 <pre>
   <div>#下载
@@ -20,8 +19,7 @@
   cd certbot-0.22.2</div>
 </pre>
 运行一次客户端，进行检查升级：
-<h3>获取证书</h3>
-<hr>
+# 获取证书
 <p>申请过程中要验证绑定的域名是否属于申请人, 其原理就是申请人在域名所在的服务器上申请证书, 然后 Let’ s Encrypt 会访问绑定的域名与客户端通信成功即可通过。</p>
 <p>验证的方式有两种，一种是停止当前的 web server 服务, 让出 80 端口, 由客户端内置的 web server 启动与 Let’ s Encrypt 通信；一种是在域名根目录下创建一个临时目录,
   并要保证外网通用域名可以访问这个目录，这种方式不需要停止当前的 web server 服务。</p>
@@ -42,7 +40,7 @@
 完成上面的操作即可获得 SSL 证书, 保存在 “/etc/letsencrypt/live/根域名/” 目录下, 会产生 4 个文件, 其中3个证书文件, 1个私钥文件. 不要移动证书的位置, 以免续期时出现错误。
 关于Letsencrypt使用的更多命令参见<a href="https://www.4spaces.org/certbot-command-line-tool-usage-document/">「这里」</a>。
 
-<h1>配置Nginx启用https</h1>
+# 配置Nginx启用https
 
 <p>上面你的Nginx配置并没有启用ssl，下面我们需要开始配置nginx，让其支持https。进行这一步的前提是你前面已经成功生成证书。</p>
 <p>编辑文件/etc/nginx/conf.d/default.conf(我是通过yum的方式安装的nginx，配置目录在这里，你根据自己的情况来)，进行如下配置（这个是我的完整配置）：</p>
@@ -100,8 +98,7 @@ server {
 
 }
 </pre>
-<h3>证书续期</h3>
-<hr>
+# 证书续期
 <p>前面说了，证书的有效期是3个月，你可以在证书过期前的30天内，进行续期，也可以进行脚本自动续期。</p>
 <h4>方式1</h4>
 进入你在下载的certbot客户端目录，执行证书续期的脚本命令如下：
