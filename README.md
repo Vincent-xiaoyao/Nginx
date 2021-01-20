@@ -26,3 +26,11 @@
 <p>申请过程中要验证绑定的域名是否属于申请人, 其原理就是申请人在域名所在的服务器上申请证书, 然后 Let’ s Encrypt 会访问绑定的域名与客户端通信成功即可通过。</p>
 <p>验证的方式有两种，一种是停止当前的 web server 服务, 让出 80 端口, 由客户端内置的 web server 启动与 Let’ s Encrypt 通信；一种是在域名根目录下创建一个临时目录, 并要保证外网通用域名可以访问这个目录，这种方式不需要停止当前的 web server 服务。</p>
 <p>证书获取方式1：通过访问80端口方式验证</p>
+<pre>
+  <div>#停止nginx
+  systemctl stop nginx</div>
+  <div>#获取证书, --standalone 参数:使用内置web server. --email 参数:管理员邮箱,证书到期前会发邮件到此邮箱提醒. -d 参数:要绑定的域名,同一域的不同子域都要输入.
+  ./certbot-auto certonly --standalone --email admin@4spaces.org -d 4spaces.org -d www.4spaces.org</div>
+  <div>#启动nginx
+  systemctl start nginx</div>
+</pre>
