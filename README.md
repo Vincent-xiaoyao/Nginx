@@ -71,19 +71,19 @@ server {
    add_header X-Content-Type-Options nosniff;
 
     #证书路径
-   ssl_certificate /etc/letsencrypt/live/4spaces.org/fullchain.pem;
-   #私钥路径
-   ssl_certificate_key /etc/letsencrypt/live/4spaces.org/privkey.pem;
-   #安全链接可选的加密协议
-   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-   #可选的加密算法,顺序很重要,越靠前的优先级越高.
-   ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
-   #在 SSLv3 或 TLSv1 握手过程一般使用客户端的首选算法,如果启用下面的配置,则会使用服务器端的首选算法.
-   ssl_prefer_server_ciphers on;
-   #储存SSL会话的缓存类型和大小
-   ssl_session_cache shared:SSL:10m;
-   #缓存有效期
-   ssl_session_timeout 60m;
+    ssl_certificate /etc/letsencrypt/live/4spaces.org/fullchain.pem;
+    #私钥路径
+    ssl_certificate_key /etc/letsencrypt/live/4spaces.org/privkey.pem;
+    #安全链接可选的加密协议
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #可选的加密算法,顺序很重要,越靠前的优先级越高.
+    ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+    #在 SSLv3 或 TLSv1 握手过程一般使用客户端的首选算法,如果启用下面的配置,则会使用服务器端的首选算法.
+    ssl_prefer_server_ciphers on;
+    #储存SSL会话的缓存类型和大小
+    ssl_session_cache shared:SSL:10m;
+    #缓存有效期
+    ssl_session_timeout 60m;
 
     location / {
         try_files $uri $uri/ /index.php?$args;  #修改内容
