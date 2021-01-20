@@ -13,11 +13,4 @@
 <h3>客户端下载</h3>
 <hr>
 <p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </p>
-<pre class="prettyprint"><code class=""><span class="com">#下载</span><span class="pln">
-wget  https</span><span class="pun">:</span><span class="com">//github.com/certbot/certbot/archive/v0.22.2.tar.gz</span><span class="pln">
-
-</span><span class="com">#解压</span><span class="pln">
-tar xzvf v0</span><span class="pun">.</span><span class="lit">22.2</span><span class="pun">.</span><span class="pln">tar</span><span class="pun">.</span><span class="pln">gz
-
-</span><span class="com">#进入目录</span><span class="pln">
-cd certbot</span><span class="pun">-</span><span class="lit">0.22</span><span class="pun">.</span><span class="lit">2</span></code></pre>
+<pre class="prettyprint">dada</pre>
