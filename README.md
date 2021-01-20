@@ -146,5 +146,11 @@ systemctl restart nginx
 选取一种方式，将对应的脚本保存为 certbotrenew.sh。
 
 添加可执行权限
-
-
+<pre>chmod +x certbotrenew.sh</pre>
+编辑 crontab 配置文件或执行 crontab -e 添加 cron 任务
+<pre>#编辑定时任务
+sudo crontab -e
+</pre>
+我这里设置为每月28号23点执行此脚本:
+<pre>0 23 28 * * /bin/sh /home/michael/certbot/certbotrenew.sh</pre>
+保存退出即可。
