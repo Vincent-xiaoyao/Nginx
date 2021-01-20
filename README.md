@@ -34,3 +34,15 @@
   <div>#启动nginx
   systemctl start nginx</div>
 </pre>
+<p>证书获取方式2：通过临时目录验证</p>
+<pre>
+  <div>#--webroot 参数:指定使用临时目录的方式. -w 参数:指定后面-d 域名所在的根目录, 如果一次申请多个域的, 可以附加更多 -w...-d... 这段.
+  ./certbot-auto certonly --webroot --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org</div>
+</pre>
+
+
+
+
+
+
+
