@@ -44,7 +44,7 @@
 关于Letsencrypt使用的更多命令参见<a href="https://www.4spaces.org/certbot-command-line-tool-usage-document/">「这里」</a>。
 
 <h1>配置Nginx启用https</h1>
-<hr>
+
 <p>上面你的Nginx配置并没有启用ssl，下面我们需要开始配置nginx，让其支持https。进行这一步的前提是你前面已经成功生成证书。</p>
 <p>编辑文件/etc/nginx/conf.d/default.conf(我是通过yum的方式安装的nginx，配置目录在这里，你根据自己的情况来)，进行如下配置（这个是我的完整配置）：</p>
 <pre>
