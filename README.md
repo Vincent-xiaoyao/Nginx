@@ -12,15 +12,12 @@
 <p>用证书的主要过程包括：客户端安装、获取证书、配置Nginx、证书自动续期等几个方面。</p>
 <h3>客户端下载</h3>
 <hr>
-<p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </p>
-<p><strong>VLESS+TCP+XTLS配置模板：</strong></p>
-<pre> {
-        "address":"服务器ip或者域名",
-        "flow":"xtls-rprx-direct",
-        "id":"填写uuid",
-        "network":"tcp",
-        "port": 端口,
-        "protocol":"vless",
-        "ps":"填写备注",
-        "tls":"xtls"
- }</pre>
+<p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </a></p>
+<pre class="prettyprint"><code class=""><span class="com">#下载</span><span class="pln">
+wget  https</span><span class="pun">:</span><span class="com">//github.com/certbot/certbot/archive/v0.22.2.tar.gz</span><span class="pln">
+
+</span><span class="com">#解压</span><span class="pln">
+tar xzvf v0</span><span class="pun">.</span><span class="lit">22.2</span><span class="pun">.</span><span class="pln">tar</span><span class="pun">.</span><span class="pln">gz
+
+</span><span class="com">#进入目录</span><span class="pln">
+cd certbot</span><span class="pun">-</span><span class="lit">0.22</span><span class="pun">.</span><span class="lit">2</span></code></pre>
