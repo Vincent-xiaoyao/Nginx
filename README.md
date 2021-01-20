@@ -41,7 +41,7 @@
   ./certbot-auto certonly --webroot --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org</div>
 </pre>
 完成上面的操作即可获得 SSL 证书, 保存在 “/etc/letsencrypt/live/根域名/” 目录下, 会产生 4 个文件, 其中3个证书文件, 1个私钥文件. 不要移动证书的位置, 以免续期时出现错误。
-关于Letsencrypt使用的更多命令参见「这里」。
+关于Letsencrypt使用的更多命令参见<a href="https://www.4spaces.org/certbot-command-line-tool-usage-document/">「这里」</a>。
 
 
 
