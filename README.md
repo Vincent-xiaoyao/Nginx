@@ -13,7 +13,14 @@
 <h3>客户端下载</h3>
 <hr>
 <p>Let’ s Encrypt客户端现已更名为certbot，客户端的地址为：<a href=https://github.com/certbot/certbot/releases>https://github.com/certbot/certbot/releases </p>
-<pre class="#">
-#下载
-
-</pre>
+<p><strong>VLESS+TCP+XTLS配置模板：</strong></p>
+<pre> {
+        "address":"服务器ip或者域名",
+        "flow":"xtls-rprx-direct",
+        "id":"填写uuid",
+        "network":"tcp",
+        "port": 端口,
+        "protocol":"vless",
+        "ps":"填写备注",
+        "tls":"xtls"
+ }</pre>
