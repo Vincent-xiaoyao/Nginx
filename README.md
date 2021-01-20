@@ -116,10 +116,10 @@ server {
 <pre>
 ./certbot-auto certonly --webroot --renew-by-default --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org
 </pre>
-<h4>方式23</h4>
+<h4>方式3</h4>
 上面两种方式，都是手动去执行的，我们可以将上面两种方式跟linux的定时任务进行结合，最终脚本如下：
 <br>
-1）通过端口验证的脚本
+（1）通过端口验证的脚本
 <pre>
 #!/bin/sh
 #停止 nginx 服务,使用 --standalone 独立服务器验证需要停止当前 web server.
@@ -132,3 +132,28 @@ fi
 #启动 nginx
 systemctl start nginx
 </pre>
+（2）通过临时目录的脚本
+<pre>
+#!/bin/sh
+# This script renews all the Let's Encrypt certificates with a validity < 30 days
+
+if ! /path/to/certbot-auto renew > /var/log/letsencrypt/renew.log 2>&1 ; then
+    echo Automated renewal failed:
+    cat /var/log/letsencrypt/renew.log
+    exit 1
+fi
+
+# 需要重启nginx证书才能生效
+systemctl restart nginx
+</pre>
+上面两个脚本中的/path/to/certbot-auto代表你下载客户端解压后的目录，其中目录下有个certbot-auto。
+选取一种方式，将对应的脚本保存为 certbotrenew.sh。
+
+添加可执行权限
+
+
+
+
+
+
+
