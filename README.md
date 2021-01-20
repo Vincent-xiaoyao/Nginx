@@ -111,3 +111,8 @@ server {
 <br>
 <p>renew 参数是官方推荐的续期方式, 使用这个参数会遍历 /etc/letsencrypt/live 下所有的证书, 如果证书在可续期的时间范围内(过期前30天内), 就会申请新的证书并替换原有证书, 否则跳过。</p>
 </pre>
+<h4>方式2</h4>
+如果要指定更新某个域名的证书, 则要使用 certonly 参数, 其实和新申请证书时的命令差不多.
+<pre>
+./certbot-auto certonly --webroot --renew-by-default --email admin@4spaces.org -w /usr/share/nginx/html -d 4spaces.org -d www.4spaces.org<br>
+</pre>
