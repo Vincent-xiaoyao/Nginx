@@ -143,17 +143,12 @@ if ! /path/to/certbot-auto renew > /var/log/letsencrypt/renew.log 2>&1 ; then
     exit 1
 fi
 
-# 需要重启nginx证书才能生效
+#需要重启nginx证书才能生效
 systemctl restart nginx
 </pre>
 上面两个脚本中的/path/to/certbot-auto代表你下载客户端解压后的目录，其中目录下有个certbot-auto。
 选取一种方式，将对应的脚本保存为 certbotrenew.sh。
 
 添加可执行权限
-
-
-
-
-
 
 
